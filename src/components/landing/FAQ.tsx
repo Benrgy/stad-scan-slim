@@ -5,6 +5,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { HelpCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/animations";
 
 const FAQ = () => {
   const faqs = [
@@ -44,7 +46,13 @@ const FAQ = () => {
     <section id="faq" className="py-24 md:py-32">
       <div className="container-narrow">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={defaultViewport}
+          variants={fadeInUp}
+        >
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent rounded-full px-4 py-1.5 text-sm font-medium mb-6">
             <HelpCircle className="w-4 h-4" />
             Veelgestelde vragen
@@ -55,36 +63,59 @@ const FAQ = () => {
           <p className="text-lg text-muted-foreground">
             Alles wat je wilt weten over LocalAffiliateOS
           </p>
-        </div>
+        </motion.div>
 
         {/* FAQ Accordion */}
-        <div className="max-w-3xl mx-auto">
+        <motion.div 
+          className="max-w-3xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={defaultViewport}
+          variants={staggerContainer}
+        >
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem
+              <motion.div
                 key={index}
-                value={`item-${index}`}
-                className="card-premium px-6 py-2 border border-border data-[state=open]:border-foreground/20"
+                variants={staggerItem}
               >
-                <AccordionTrigger className="text-left font-display text-lg font-semibold text-foreground hover:no-underline py-4">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="card-premium px-6 py-2 border border-border data-[state=open]:border-foreground/20 overflow-hidden"
+                >
+                  <AccordionTrigger className="text-left font-display text-lg font-semibold text-foreground hover:no-underline py-4 [&[data-state=open]>svg]:rotate-180">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {faq.answer}
+                    </motion.div>
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
-        </div>
+        </motion.div>
 
         {/* Contact CTA */}
-        <div className="mt-16 text-center">
+        <motion.div 
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={defaultViewport}
+          transition={{ delay: 0.4 }}
+        >
           <p className="text-muted-foreground mb-4">
             Vraag niet beantwoord?
           </p>
-          <a
+          <motion.a
             href="mailto:support@localaffiliateos.com"
             className="inline-flex items-center gap-2 text-foreground font-medium hover:text-accent transition-colors"
+            whileHover={{ x: 5 }}
           >
             Neem contact op
             <svg
@@ -100,8 +131,8 @@ const FAQ = () => {
                 d="M14 5l7 7m0 0l-7 7m7-7H3"
               />
             </svg>
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
