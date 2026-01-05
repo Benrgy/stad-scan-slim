@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/animations";
 
 const Pricing = () => {
   const plans = [
@@ -42,7 +44,13 @@ const Pricing = () => {
     <section id="pricing" className="py-24 md:py-32 bg-secondary/30">
       <div className="container-section">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={defaultViewport}
+          variants={fadeInUp}
+        >
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent rounded-full px-4 py-1.5 text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4" />
             Transparante prijzen
@@ -53,26 +61,44 @@ const Pricing = () => {
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Start gratis en upgrade wanneer je klaar bent om te schalen.
           </p>
-        </div>
+        </motion.div>
 
         {/* Pricing cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={defaultViewport}
+          variants={staggerContainer}
+        >
           {plans.map((plan, index) => (
-            <div
+            <motion.div
               key={index}
               className={`relative rounded-3xl p-8 md:p-10 transition-all ${
                 plan.popular
                   ? "bg-foreground text-background scale-[1.02] shadow-2xl shadow-foreground/20"
                   : "card-premium"
               }`}
+              variants={staggerItem}
+              whileHover={{ 
+                y: -8, 
+                scale: plan.popular ? 1.04 : 1.02,
+                transition: { duration: 0.2 } 
+              }}
             >
               {/* Popular badge */}
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <motion.div 
+                  className="absolute -top-4 left-1/2 -translate-x-1/2"
+                  initial={{ opacity: 0, y: -10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                >
                   <div className="bg-accent text-accent-foreground text-sm font-semibold px-4 py-1.5 rounded-full">
                     Meest gekozen
                   </div>
-                </div>
+                </motion.div>
               )}
 
               {/* Plan header */}
@@ -92,13 +118,17 @@ const Pricing = () => {
                   {plan.description}
                 </p>
                 <div className="flex items-baseline gap-2">
-                  <span
+                  <motion.span
                     className={`text-5xl font-bold ${
                       plan.popular ? "text-background" : "text-foreground"
                     }`}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2, type: "spring" }}
                   >
                     {plan.price}
-                  </span>
+                  </motion.span>
                   <span
                     className={
                       plan.popular ? "text-background/60" : "text-muted-foreground"
@@ -112,7 +142,14 @@ const Pricing = () => {
               {/* Features */}
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
+                  <motion.li 
+                    key={i} 
+                    className="flex items-start gap-3"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 + i * 0.05 }}
+                  >
                     <Check
                       className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
                         plan.popular ? "text-accent" : "text-accent"
@@ -125,31 +162,42 @@ const Pricing = () => {
                     >
                       {feature}
                     </span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
 
               {/* CTA */}
-              <Button
-                variant={plan.popular ? "accent" : "outline"}
-                size="lg"
-                className="w-full group"
-              >
-                {plan.cta}
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-              </Button>
-            </div>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button
+                  variant={plan.popular ? "accent" : "outline"}
+                  size="lg"
+                  className="w-full group"
+                >
+                  {plan.cta}
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                </Button>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Trust badges */}
-        <div className="mt-12 text-center">
+        <motion.div 
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={defaultViewport}
+          transition={{ delay: 0.4 }}
+        >
           <p className="text-sm text-muted-foreground mb-4">
             14 dagen gratis proberen • Geen creditcard nodig • Cancel wanneer je
             wilt
           </p>
           <div className="flex items-center justify-center gap-6 text-muted-foreground">
-            <div className="flex items-center gap-2">
+            <motion.div 
+              className="flex items-center gap-2"
+              whileHover={{ scale: 1.05 }}
+            >
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -164,8 +212,11 @@ const Pricing = () => {
                 />
               </svg>
               <span className="text-sm">SSL beveiligd</span>
-            </div>
-            <div className="flex items-center gap-2">
+            </motion.div>
+            <motion.div 
+              className="flex items-center gap-2"
+              whileHover={{ scale: 1.05 }}
+            >
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -180,9 +231,9 @@ const Pricing = () => {
                 />
               </svg>
               <span className="text-sm">GDPR compliant</span>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
