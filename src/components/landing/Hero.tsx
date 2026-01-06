@@ -37,7 +37,10 @@ const Hero = () => {
             className="text-display text-foreground text-center mb-8"
             variants={staggerItem}
           >
-            Vind in 2 minuten de winstgevendste steden voor jouw product
+            Vind in 2 minuten de{" "}
+            <span className="text-highlight inline-block">winstgevendste steden</span>
+            <br />
+            voor jouw product
           </motion.h1>
 
           {/* Subheadline */}

@@ -38,7 +38,9 @@ const Benefits = () => {
           variants={fadeInUp}
         >
           <h2 className="text-display-sm text-foreground mb-4">
-            Waarom slimme affiliates voor Stad‑Scan Slim kiezen
+            Waarom slimme affiliates
+            <br className="hidden md:block" />
+            voor Stad‑Scan Slim kiezen
           </h2>
         </motion.div>
 

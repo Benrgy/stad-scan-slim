@@ -125,9 +125,10 @@
 
   /* Bracket text highlight like kree8.agency */
   .text-highlight {
-    @apply relative inline-block px-3 py-1;
+    @apply relative inline-block px-3 py-1.5;
     background: linear-gradient(135deg, hsl(var(--accent) / 0.15), hsl(var(--accent) / 0.05));
-    border-radius: 4px;
+    border-radius: 6px;
+    line-height: 1.2;
   }
 
   .text-highlight::before,

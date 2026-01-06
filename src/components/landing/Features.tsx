@@ -42,7 +42,9 @@ const Features = () => {
           variants={fadeInUp}
         >
           <h2 className="text-display-sm text-foreground mb-4">
-            Wat Stad‑Scan Slim voor je doet
+            Wat Stad‑Scan Slim
+            <br className="hidden md:block" />
+            voor je doet
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Eén plek waar product‑analyse, stadsdata en zoekintentie samenkomen.
