@@ -33,10 +33,10 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
             <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
-              <span className="text-background font-bold text-sm">LA</span>
+              <span className="text-background font-bold text-sm">SS</span>
             </div>
             <span className="font-display font-bold text-lg text-foreground hidden sm:block">
-              LocalAffiliateOS
+              Stad‑Scan Slim
             </span>
           </a>
 

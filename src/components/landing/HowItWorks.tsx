@@ -9,33 +9,25 @@ const HowItWorks = () => {
       number: "01",
       tag: "Input",
       icon: Link2,
-      title: "Plak je product-URL",
+      title: "Product invoeren",
       description:
-        "Of beschrijf je product in een paar woorden. Onze AI begrijpt direct waar je mee bezig bent.",
+        "Vul de naam, URL en korte beschrijving van je product in. De engine herkent automatisch de niche, het ticket‑niveau en de doelgroep.",
     },
     {
       number: "02",
       tag: "Analyse",
       icon: BarChart3,
-      title: "AI analyseert 312 steden",
+      title: "Data combineren",
       description:
-        "We scannen concurrentie, zoekvolume, koopkracht en 47 andere metrics per stad in Nederland en België.",
+        "We koppelen jouw productprofiel aan stadsdata (inwoners, inkomen, demografie) en zoekintentie‑signalen per stad in NL & BE.",
     },
     {
       number: "03",
       tag: "Resultaat",
       icon: TrendingUp,
-      title: "Ontvang je stadsscore",
+      title: "Slimme stadenscore + advies",
       description:
-        "Elke stad krijgt een score van 0-100. Je ziet direct waar de grootste kansen liggen.",
-    },
-    {
-      number: "04",
-      tag: "Actie",
-      icon: Rocket,
-      title: "Launch met vertrouwen",
-      description:
-        "Start je campagnes in de top-steden en zie je ROI stijgen. Track resultaten en laat de AI bijleren.",
+        "Je krijgt een shortlist met beste steden, inclusief score, duidelijke uitleg en concrete adviezen waar je begint en waar je beter níet in investeert.",
     },
   ];
 
@@ -51,12 +43,12 @@ const HowItWorks = () => {
           variants={fadeInUp}
         >
           <div>
-            <div className="inline-flex items-center gap-2 bg-foreground text-background rounded-full px-4 py-1.5 text-sm font-medium mb-6">
-              Zo werkt het
-            </div>
-            <h2 className="text-display-sm text-foreground max-w-xl">
-              Van URL naar winst in 4 simpele stappen
+            <h2 className="text-display-sm text-foreground max-w-xl mb-4">
+              Zo werkt Stad‑Scan Slim
             </h2>
+            <p className="text-lg text-muted-foreground max-w-xl">
+              Van product‑idee naar datagedreven stadenskeuze in drie simpele stappen.
+            </p>
           </div>
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button variant="dark" size="lg" className="group self-start lg:self-auto">
@@ -68,7 +60,7 @@ const HowItWorks = () => {
 
         {/* Steps */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={defaultViewport}

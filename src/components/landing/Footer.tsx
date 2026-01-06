@@ -12,7 +12,7 @@ const Footer = () => {
   const socials = [
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:hello@localaffiliateos.com", label: "Email" },
+    { icon: Mail, href: "mailto:hello@stadscanslim.com", label: "Email" },
   ];
 
   return (
@@ -22,10 +22,10 @@ const Footer = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
-              <span className="text-background font-bold text-sm">LA</span>
+              <span className="text-background font-bold text-sm">SS</span>
             </div>
             <span className="font-display font-bold text-foreground">
-              LocalAffiliateOS
+              Stad‑Scan Slim
             </span>
           </div>
 
@@ -60,7 +60,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-10 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} LocalAffiliateOS. Alle rechten
+            © {new Date().getFullYear()} Stad‑Scan Slim. Alle rechten
             voorbehouden.
           </p>
         </div>

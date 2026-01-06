@@ -6,15 +6,14 @@ import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/
 const Pricing = () => {
   const plans = [
     {
-      name: "Free",
+      name: "Gratis",
       price: "€0",
       period: "voor altijd",
       description: "Perfect om te starten en de tool te ontdekken.",
       features: [
-        "5 stadsscans per maand",
-        "Basis stadscore",
-        "Top 10 steden per scan",
-        "Email support",
+        "X scans per maand",
+        "Beperkt aantal steden zichtbaar",
+        "Basisrapport per product",
       ],
       cta: "Start gratis",
       variant: "outline" as const,
@@ -26,15 +25,13 @@ const Pricing = () => {
       period: "per maand",
       description: "Voor serieuze affiliates die willen groeien.",
       features: [
-        "Onbeperkt stadsscans",
-        "Geavanceerde stadscore™",
-        "Alle 312 steden per scan",
-        "Self-learning AI",
-        "Export naar CSV/PDF",
-        "Prioriteit support",
-        "Historische data",
+        "Onbeperkt producten en scans",
+        "Alle steden in NL & BE",
+        "Opslaan van projecten & historie",
+        "Export van rapporten (CSV/PDF)",
+        "Prioriteit voor nieuwe features",
       ],
-      cta: "Start 14 dagen gratis",
+      cta: "Start Pro – €29 per maand",
       variant: "dark" as const,
       popular: true,
     },
@@ -51,15 +48,11 @@ const Pricing = () => {
           viewport={defaultViewport}
           variants={fadeInUp}
         >
-          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent rounded-full px-4 py-1.5 text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4" />
-            Transparante prijzen
-          </div>
           <h2 className="text-display-sm text-foreground mb-4">
-            Simpel, eerlijk, schaalbaar
+            Kies je startpunt
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            Start gratis en upgrade wanneer je klaar bent om te schalen.
+            Begin gratis, upgrade als je klaar bent om opschalen.
           </p>
         </motion.div>
 

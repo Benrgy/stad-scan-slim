@@ -11,34 +11,34 @@ import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/
 const FAQ = () => {
   const faqs = [
     {
-      question: "Hoe werkt de stadscore precies?",
+      question: "Werkt dit voor elk product of alleen voor specifieke cursussen/netwerken?",
       answer:
-        "De stadscore is een getal van 0-100 dat de potentie van een stad voor jouw specifieke product weergeeft. We analyseren 50+ datapunten waaronder zoekvolume, concurrentiedichtheid, gemiddelde koopkracht, demografische data, en historische campagne-performance. Hoe hoger de score, hoe groter de kans op succes.",
+        "Stad‑Scan Slim is product‑agnostisch. Zolang je een duidelijke product‑ of salespagina hebt, kunnen we een profiel maken en de beste steden bepalen.",
     },
     {
-      question: "Kan ik de tool gratis uitproberen?",
+      question: "Welke data gebruiken jullie om steden te scoren?",
       answer:
-        "Ja! Je kunt starten met ons Free plan dat 5 stadsscans per maand bevat. Geen creditcard nodig. Als je meer scans wilt of toegang tot geavanceerde features, kun je upgraden naar Pro met een 14-daagse gratis proefperiode.",
+        "We combineren openbare stadsdata (zoals inwoners, inkomen, demografie) met zoek‑ en intentiesignalen per niche. Op basis daarvan berekenen we een kansen‑score per stad.",
     },
     {
-      question: "Hoe snel krijg ik resultaten?",
+      question: "Hoe vaak worden de gegevens bijgewerkt?",
       answer:
-        "Gemiddeld duurt een volledige stadsscan 2 minuten. Je plakt je URL, onze AI analyseert je product, en je krijgt direct een gerankte lijst van alle 312 steden in Nederland en België met hun scores.",
+        "Stadsdata wordt periodiek geüpdatet (wanneer bronnen vernieuwen), intentiesignalen en scores worden minimaal wekelijks ververst.",
     },
     {
-      question: "Wat maakt de self-learning AI bijzonder?",
+      question: "Moet ik mijn resultaten delen?",
       answer:
-        "Onze AI leert van de campagnes die je draait. Als je terugkoppelt welke steden goed presteren, verbetert het algoritme de voorspellingen voor jouw specifieke niche. Na 10 campagnes is de accuraatheid gemiddeld 40% hoger.",
+        "Je kunt optioneel resultaten (kliks, leads, sales) invullen. Daarmee wordt de engine slimmer en krijg jij betere aanbevelingen. Deze data wordt niet gedeeld met andere gebruikers.",
     },
     {
-      question: "Voor welke niches werkt dit?",
+      question: "Voor welke landen werkt het nu?",
       answer:
-        "LocalAffiliateOS werkt voor vrijwel elke niche: van fitness en gezondheid tot SaaS, lokale diensten, e-commerce, en meer. Zolang je product of dienst geografisch relevant is, kunnen we je helpen de beste steden te vinden.",
+        "In de huidige versie focussen we op Nederland en België. Later breiden we uit naar andere landen.",
     },
     {
-      question: "Kan ik mijn team toegang geven?",
+      question: "Kan ik later upgraden of downgraden?",
       answer:
-        "Op dit moment is LocalAffiliateOS ontworpen voor individueel gebruik. We werken aan team-functionaliteit voor Q2 2024. Neem contact op als je interesse hebt in early access.",
+        "Ja. Je kunt op elk moment van Free naar Pro (of terug) wisselen. Je data blijft bewaard.",
     },
   ];
 
@@ -58,11 +58,8 @@ const FAQ = () => {
             Veelgestelde vragen
           </div>
           <h2 className="text-display-sm text-foreground mb-4">
-            Heb je vragen?
+            Veelgestelde vragen
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Alles wat je wilt weten over LocalAffiliateOS
-          </p>
         </motion.div>
 
         {/* FAQ Accordion */}
@@ -109,29 +106,6 @@ const FAQ = () => {
           viewport={defaultViewport}
           transition={{ delay: 0.4 }}
         >
-          <p className="text-muted-foreground mb-4">
-            Vraag niet beantwoord?
-          </p>
-          <motion.a
-            href="mailto:support@localaffiliateos.com"
-            className="inline-flex items-center gap-2 text-foreground font-medium hover:text-accent transition-colors"
-            whileHover={{ x: 5 }}
-          >
-            Neem contact op
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
-          </motion.a>
         </motion.div>
       </div>
     </section>

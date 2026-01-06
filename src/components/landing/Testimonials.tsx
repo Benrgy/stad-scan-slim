@@ -51,7 +51,7 @@ const Testimonials = () => {
             Wat anderen zeggen
           </h2>
           <p className="text-lg text-background/60 max-w-xl mx-auto">
-            500+ affiliates gebruiken LocalAffiliateOS om slimmer te adverteren
+            500+ affiliates gebruiken Stad‑Scan Slim om slimmer te adverteren
           </p>
         </motion.div>
 

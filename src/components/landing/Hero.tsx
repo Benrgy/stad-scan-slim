@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BarChart3, Target } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/animations";
 
@@ -32,51 +32,12 @@ const Hero = () => {
           animate="visible"
           variants={staggerContainer}
         >
-          {/* Availability badge */}
-          <motion.div 
-            className="flex justify-center mb-8"
-            variants={staggerItem}
-          >
-            <motion.div 
-              className="inline-flex items-center gap-3 bg-secondary/80 backdrop-blur-sm border border-border rounded-full px-5 py-2.5"
-              whileHover={{ scale: 1.02 }}
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-              </span>
-              <span className="text-sm font-medium text-foreground">
-                Beschikbaar voor NL & BE
-              </span>
-            </motion.div>
-          </motion.div>
-
-          {/* Headline with icons */}
+          {/* Headline */}
           <motion.h1 
             className="text-display text-foreground text-center mb-8"
             variants={staggerItem}
           >
-            <span className="inline-flex items-center gap-3">
-              Vind de
-              <motion.span
-                whileHover={{ rotate: 15, scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Target className="w-12 h-12 md:w-16 md:h-16 text-accent inline-block" />
-              </motion.span>
-            </span>
-            <br />
-            <span className="text-highlight">winstgevendste steden</span>
-            <br />
-            <span className="inline-flex items-center gap-3">
-              voor jouw product
-              <motion.span
-                whileHover={{ rotate: -15, scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <BarChart3 className="w-12 h-12 md:w-16 md:h-16 text-accent inline-block" />
-              </motion.span>
-            </span>
+            Vind in 2 minuten de winstgevendste steden voor jouw product
           </motion.h1>
 
           {/* Subheadline */}
@@ -84,26 +45,50 @@ const Hero = () => {
             className="text-xl md:text-2xl text-muted-foreground text-center max-w-2xl mx-auto mb-12 leading-relaxed"
             variants={staggerItem}
           >
-            Datagedreven advies per stad in 2 minuten. Onze engine leert mee met
-            jouw campagnes, zodat elke launch slimmer wordt.
+            Stad‑Scan Slim analyseert jouw product en koppelt het aan data per stad in NL & BE. Je krijgt eerlijk, datagedreven advies waar je campagnes het meeste kans maken – zonder gokwerk of guru‑praat.
           </motion.p>
 
           {/* CTAs */}
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             variants={staggerItem}
           >
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button variant="dark" size="xl" className="group">
-                Start je eerste scan
+                Doe nu je eerste scan
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button variant="outline" size="xl">
-                Bekijk demo
+                Bekijk hoe het werkt
               </Button>
             </motion.div>
+          </motion.div>
+
+          {/* Badges */}
+          <motion.div 
+            className="flex flex-wrap justify-center gap-4 mb-16"
+            variants={staggerItem}
+          >
+            {[
+              "Voor affiliates & agencies",
+              "Nederland & België",
+              "Datagedreven, self‑learning engine"
+            ].map((badge, i) => (
+              <motion.div
+                key={i}
+                className="inline-flex items-center gap-2 bg-secondary/80 backdrop-blur-sm border border-border rounded-full px-4 py-2"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + i * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <span className="text-sm font-medium text-foreground">
+                  {badge}
+                </span>
+              </motion.div>
+            ))}
           </motion.div>
 
           {/* Trust indicators */}
