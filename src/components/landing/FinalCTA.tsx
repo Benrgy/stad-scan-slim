@@ -37,7 +37,7 @@ const FinalCTA = () => {
 
           {/* Headline */}
           <motion.h2 
-            className="text-display-sm md:text-display text-foreground mb-6"
+            className="text-display-sm md:text-display text-foreground mb-6 overflow-visible"
             variants={staggerItem}
           >
             Klaar om slimmer te adverteren?

@@ -47,7 +47,7 @@ const Testimonials = () => {
           <div className="inline-flex items-center gap-2 bg-background/10 text-background rounded-full px-4 py-1.5 text-sm font-medium mb-6">
             Testimonials
           </div>
-          <h2 className="text-display-sm mb-4">
+          <h2 className="text-display-sm mb-4 overflow-visible">
             Wat anderen zeggen
           </h2>
           <p className="text-lg text-background/60 max-w-xl mx-auto">

@@ -41,7 +41,7 @@ const Features = () => {
           viewport={defaultViewport}
           variants={fadeInUp}
         >
-          <h2 className="text-display-sm text-foreground mb-4">
+          <h2 className="text-display-sm text-foreground mb-4 overflow-visible">
             Wat Stad‑Scan Slim
             <br className="hidden md:block" />
             voor je doet

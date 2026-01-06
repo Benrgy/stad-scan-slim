@@ -57,7 +57,7 @@ const FAQ = () => {
             <HelpCircle className="w-4 h-4" />
             Veelgestelde vragen
           </div>
-          <h2 className="text-display-sm text-foreground mb-4">
+          <h2 className="text-display-sm text-foreground mb-4 overflow-visible">
             Veelgestelde vragen
           </h2>
         </motion.div>
