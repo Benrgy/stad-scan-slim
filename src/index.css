@@ -115,6 +115,8 @@
     color: hsl(var(--foreground));
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.3;
+    overflow: visible;
   }
   
   h1 {
@@ -136,6 +138,8 @@
     color: hsl(var(--foreground));
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.3;
+    overflow: visible;
   }
   
   .font-semibold,
@@ -205,6 +209,13 @@
   /* Premium card style */
   .card-premium {
     @apply bg-background border border-border rounded-2xl p-8 transition-all duration-300;
+    overflow: visible !important;
+  }
+  
+  .card-premium h3,
+  .card-premium p,
+  .card-premium div {
+    overflow: visible !important;
   }
 
   .card-premium:hover {

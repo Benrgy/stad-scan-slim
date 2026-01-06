@@ -62,11 +62,11 @@ const Features = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group card-premium cursor-pointer"
+              className="group card-premium cursor-pointer overflow-visible"
               variants={staggerItem}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
             >
-              <div className="flex flex-col h-full">
+              <div className="flex flex-col h-full overflow-visible">
                 {/* Icon */}
                 <motion.div 
                   className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-accent/10 transition-colors"
@@ -80,7 +80,7 @@ const Features = () => {
                   <div className="text-sm font-medium text-accent mb-1">
                     {feature.subtitle}
                   </div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                  <h3 className="font-display text-xl font-bold text-foreground mb-2 leading-snug">
                     {feature.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
