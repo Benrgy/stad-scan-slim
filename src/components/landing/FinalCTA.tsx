@@ -2,8 +2,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/animations";
+import { useNavigate } from "react-router-dom";
 
 const FinalCTA = () => {
+  const navigate = useNavigate();
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section className="py-24 md:py-32 relative overflow-hidden">
       {/* Background gradient */}
@@ -58,13 +67,13 @@ const FinalCTA = () => {
             variants={staggerItem}
           >
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button variant="dark" size="xl" className="group">
+              <Button variant="dark" size="xl" className="group" onClick={() => navigate("/auth")}>
                 Start je eerste scan gratis
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button variant="outline" size="xl">
+              <Button variant="outline" size="xl" onClick={() => scrollToSection("#how-it-works")}>
                 Bekijk demo
               </Button>
             </motion.div>

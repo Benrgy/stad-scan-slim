@@ -2,8 +2,18 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/animations";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative pt-32 md:pt-44 pb-20 md:pb-32 overflow-hidden">
       {/* Background elements */}
@@ -57,13 +67,13 @@ const Hero = () => {
             variants={staggerItem}
           >
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button variant="dark" size="xl" className="group">
+              <Button variant="dark" size="xl" className="group" onClick={() => navigate("/auth")}>
                 Doe nu je eerste scan
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button variant="outline" size="xl">
+              <Button variant="outline" size="xl" onClick={() => scrollToSection("#how-it-works")}>
                 Bekijk hoe het werkt
               </Button>
             </motion.div>

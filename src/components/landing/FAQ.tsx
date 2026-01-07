@@ -106,6 +106,15 @@ const FAQ = () => {
           viewport={defaultViewport}
           transition={{ delay: 0.4 }}
         >
+          <p className="text-muted-foreground">
+            Nog andere vragen?{" "}
+            <a 
+              href="mailto:support@stadscansim.nl" 
+              className="text-foreground font-semibold hover:underline"
+            >
+              Neem contact op
+            </a>
+          </p>
         </motion.div>
       </div>
     </section>
