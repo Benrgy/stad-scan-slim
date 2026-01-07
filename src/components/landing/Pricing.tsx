@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Check, ArrowRight, Sparkles } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/animations";
+import { useNavigate } from "react-router-dom";
 
 const Pricing = () => {
+  const navigate = useNavigate();
+  
   const plans = [
     {
       name: "Gratis",
@@ -11,7 +14,7 @@ const Pricing = () => {
       period: "voor altijd",
       description: "Perfect om te starten en de tool te ontdekken.",
       features: [
-        "X scans per maand",
+        "3 scans per maand",
         "Beperkt aantal steden zichtbaar",
         "Basisrapport per product",
       ],
@@ -165,6 +168,7 @@ const Pricing = () => {
                   variant={plan.popular ? "accent" : "outline"}
                   size="lg"
                   className="w-full group"
+                  onClick={() => navigate("/auth")}
                 >
                   {plan.cta}
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />

@@ -3,14 +3,14 @@ import { fadeInUp, defaultViewport } from "@/lib/animations";
 
 const LogoMarquee = () => {
   const logos = [
-    "TechFlow",
-    "DataPulse",
-    "CloudNine",
-    "MetricLab",
-    "GrowthOS",
-    "ScaleUp",
-    "LaunchPad",
-    "VelocityAI",
+    "PayPro",
+    "Daisycon",
+    "TradeTracker",
+    "Awin",
+    "AdCrowd",
+    "M4N",
+    "Conversive",
+    "WebGains",
   ];
 
   return (
