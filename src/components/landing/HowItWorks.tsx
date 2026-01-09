@@ -43,7 +43,7 @@ const HowItWorks = () => {
           variants={fadeInUp}
         >
           <div>
-            <h2 className="text-display-sm text-foreground max-w-xl mb-4 overflow-visible">
+            <h2 className="text-display-sm text-foreground max-w-xl mb-4">
               Zo werkt Stad‑Scan Slim
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl">
