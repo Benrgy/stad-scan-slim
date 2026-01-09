@@ -44,7 +44,7 @@ const Hero = () => {
         >
           {/* Headline */}
           <motion.h1 
-            className="text-display text-foreground text-center mb-8 overflow-visible"
+            className="text-display text-foreground text-center mb-8 overflow-visible pb-2"
             variants={staggerItem}
           >
             Vind in 2 minuten de{" "}
