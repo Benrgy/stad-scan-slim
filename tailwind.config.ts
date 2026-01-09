@@ -18,8 +18,8 @@ export default {
         display: ['Syne', 'Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'display': ['clamp(3rem, 8vw, 5.5rem)', { lineHeight: '1.02', letterSpacing: '-0.03em' }],
-        'display-sm': ['clamp(2rem, 5vw, 3.5rem)', { lineHeight: '1.08', letterSpacing: '-0.02em' }],
+        'display': ['clamp(3rem, 8vw, 5.5rem)', { lineHeight: '1.15', letterSpacing: '-0.03em' }],
+        'display-sm': ['clamp(2rem, 5vw, 3.5rem)', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
       },
       colors: {
         border: "hsl(var(--border))",
