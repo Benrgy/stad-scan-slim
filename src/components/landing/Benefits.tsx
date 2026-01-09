@@ -37,7 +37,7 @@ const Benefits = () => {
           viewport={defaultViewport}
           variants={fadeInUp}
         >
-          <h2 className="text-display-sm text-foreground mb-4 overflow-visible">
+          <h2 className="text-display-sm text-foreground mb-4">
             Waarom slimme affiliates
             <br className="hidden md:block" />
             voor Stad‑Scan Slim kiezen

@@ -1,10 +1,11 @@
+import { forwardRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/animations";
+import { staggerContainer, staggerItem, defaultViewport } from "@/lib/animations";
 import { useNavigate } from "react-router-dom";
 
-const FinalCTA = () => {
+const FinalCTA = forwardRef<HTMLElement>((_, ref) => {
   const navigate = useNavigate();
 
   const scrollToSection = (href: string) => {
@@ -13,8 +14,9 @@ const FinalCTA = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section ref={ref} className="py-24 md:py-32 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-accent/10" />
       <motion.div 
@@ -46,7 +48,7 @@ const FinalCTA = () => {
 
           {/* Headline */}
           <motion.h2 
-            className="text-display-sm md:text-display text-foreground mb-6 overflow-visible"
+            className="text-display-sm md:text-display text-foreground mb-6"
             variants={staggerItem}
           >
             Klaar om slimmer te adverteren?
@@ -119,6 +121,8 @@ const FinalCTA = () => {
       </div>
     </section>
   );
-};
+});
+
+FinalCTA.displayName = "FinalCTA";
 
 export default FinalCTA;

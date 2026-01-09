@@ -51,7 +51,7 @@ const Pricing = () => {
           viewport={defaultViewport}
           variants={fadeInUp}
         >
-          <h2 className="text-display-sm text-foreground mb-4 overflow-visible">
+          <h2 className="text-display-sm text-foreground mb-4">
             Kies je startpunt
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">

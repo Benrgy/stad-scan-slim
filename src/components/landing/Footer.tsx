@@ -1,6 +1,7 @@
+import { forwardRef } from "react";
 import { Twitter, Linkedin, Mail } from "lucide-react";
 
-const Footer = () => {
+const Footer = forwardRef<HTMLElement>((_, ref) => {
   const links = [
     { label: "Werkwijze", href: "#how-it-works" },
     { label: "Prijzen", href: "#pricing" },
@@ -16,7 +17,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-12 border-t border-border">
+    <footer ref={ref} className="py-12 border-t border-border">
       <div className="container-section">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo */}
@@ -67,6 +68,8 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";
 
 export default Footer;

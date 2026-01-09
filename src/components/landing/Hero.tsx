@@ -44,11 +44,12 @@ const Hero = () => {
         >
           {/* Headline */}
           <motion.h1 
-            className="text-display text-foreground text-center mb-8 overflow-visible pb-2"
+            className="text-display text-foreground text-center mb-8"
             variants={staggerItem}
           >
             Vind in 2 minuten de{" "}
-            <span className="text-highlight inline-block">winstgevendste steden</span>
+            <br className="hidden sm:block" />
+            <span className="text-highlight inline-block my-2">winstgevendste steden</span>
             <br />
             voor jouw product
           </motion.h1>
